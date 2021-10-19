@@ -190,8 +190,8 @@ void qiongju()
 		}
 		add(a);
 	} 
-	printf("×î¸ß¼ÛÖµÎª:%d\n",max_v);
-	printf("ËùÈ¡»õÎïÎª:\n");
+	printf("æœ€é«˜ä»·å€¼ä¸º:%d\n",max_v);
+	printf("æ‰€å–è´§ç‰©ä¸º:\n");
 	puts(max);
 	
 }
@@ -231,8 +231,8 @@ void dynamic()
 	{
 		m[0][c]=m[1][c];
 	}
-	printf("×î¸ß¼ÛÖµÎª:%d\n",m[0][c]);
-	printf("ËùÈ¡»õÎïÎª:\n");
+	printf("æœ€é«˜ä»·å€¼ä¸º:%d\n",m[0][c]);
+	printf("æ‰€å–è´§ç‰©ä¸º:\n");
 	for(int i=0;i<19;i++)
 	{
 		if(m[i][c]==m[i+1][c])
@@ -303,8 +303,8 @@ void beiwang()
 			bw_m[i][j]=-1;
 		}
 	}
-	printf("×î¸ß¼ÛÖµÎª:%d\n",lookupchain(0,100));
-	printf("ËùÈ¡»õÎïÎª:\n");
+	printf("æœ€é«˜ä»·å€¼ä¸º:%d\n",lookupchain(0,100));
+	printf("æ‰€å–è´§ç‰©ä¸º:\n");
 	for(int i=0;i<19;i++)
 	{
 		if(bw_m[i][c]==bw_m[i+1][c])
@@ -501,8 +501,8 @@ void fenzhi()
 		for(int k=0;k<20;k++)
 		xuanze[k]=N->x[k];
 	}	
-	printf("×î¸ß¼ÛÖµÎª:%d\n",bestp_fz);
-	printf("ËùÈ¡»õÎïÎª:\n");
+	printf("æœ€é«˜ä»·å€¼ä¸º:%d\n",bestp_fz);
+	printf("æ‰€å–è´§ç‰©ä¸º:\n");
 	int j;
 	for(i=0;i<=19;i++)
 	{
@@ -563,8 +563,8 @@ void ran()
 		}
 		count++;
 	}
-	printf("×î¸ß¼ÛÖµÎª:%d\n",max_v);
-	printf("ËùÈ¡»õÎïÎª:\n");
+	printf("æœ€é«˜ä»·å€¼ä¸º:%d\n",max_v);
+	printf("æ‰€å–è´§ç‰©ä¸º:\n");
 	for(int i=0;i<=19;i++)
 	{
 		printf("%d",max_x[i]);
@@ -574,25 +574,25 @@ void ran()
 
 int main()
 {
-	printf("Çî¾Ù·¨:\n");
+	printf("ç©·ä¸¾æ³•:\n");
 	qiongju();
-	printf("¶¯Ì¬¹æ»®:\n");
+	printf("åŠ¨æ€è§„åˆ’:\n");
 	dynamic();
-	printf("×Ô¶¥ÏòÏÂ±¸ÍüÂ¼:\n");
+	printf("è‡ªé¡¶å‘ä¸‹å¤‡å¿˜å½•:\n");
 	beiwang();
-	printf("»ØËİ·¨:\n");
+	printf("å›æº¯æ³•:\n");
 	huisu(0);
-	//Êä³öx
-	printf("×î¸ß¼ÛÖµÎª:%d\n",bestv_hs);
-	printf("ËùÈ¡»õÎïÎª:\n");
+	//è¾“å‡ºx
+	printf("æœ€é«˜ä»·å€¼ä¸º:%d\n",bestv_hs);
+	printf("æ‰€å–è´§ç‰©ä¸º:\n");
 	for(int i=0;i<=19;i++)
 	{
 		printf("%d",opt_hs[i]);
 	}
 	printf("\n");	
-	printf("·ÖÖ§½ç¶¨·¨:\n");
+	printf("åˆ†æ”¯ç•Œå®šæ³•:\n");
 	fenzhi();
-	printf("ÃÉÌØ¿¨Âå·½·¨:\n");
+	printf("è’™ç‰¹å¡æ´›æ–¹æ³•:\n");
 	ran();
 	return 1;
 } 
