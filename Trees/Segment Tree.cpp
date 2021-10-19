@@ -399,11 +399,11 @@ void mid(BiTree T)
 {
 	if(ifnil(T)) return ;
 	mid(T->lchild);
-	printf("课程编号: ");
+	printf("璇剧▼缂栧彿: ");
 	printf("%d ",T->id);	
-	printf("课程名称: ");
+	printf("璇剧▼鍚嶇О: ");
 	printf("%s ",T->classid); 
-	printf("课程区间: "); 
+	printf("璇剧▼鍖洪棿: "); 
 	printf("%d %d \n",T->low,T->high);	
 	mid(T->rchild);
 }
@@ -418,11 +418,11 @@ void LayerTraversal(BiTree T)
 	while(q.front!=q.rear)
 	{
 		DeQueue(q,p);
-		printf("课程编号: ");
+		printf("璇剧▼缂栧彿: ");
 		printf("%d ",p->id);	
-		printf("课程名称: ");
+		printf("璇剧▼鍚嶇О: ");
 		printf("%s ",p->classid); 
-		printf("课程区间: "); 
+		printf("璇剧▼鍖洪棿: "); 
 		printf("%d %d ",p->low,p->high);	
 		printf("max=%d\n",p->max);
 		if(!ifnil(p->parent))
@@ -452,11 +452,11 @@ void interval_search(BiTree T,int low,int high)
 
 		if(ifoverlap(x,low,high))
 		{
-			printf("课程编号: ");
+			printf("璇剧▼缂栧彿: ");
 			printf("%d ",x->id);	
-			printf("课程名称: ");
+			printf("璇剧▼鍚嶇О: ");
 			printf("%s ",x->classid); 
-			printf("课程区间: "); 
+			printf("璇剧▼鍖洪棿: "); 
 			printf("%d %d \n",x->low,x->high);
 		}
 		if(!ifnil(x->lchild)&&x->lchild->max>=low)
@@ -486,7 +486,7 @@ BiTree interval_delete_search(BiTree T,int low,int high)
 		else x=x->lchild;
 		
 	}
-	printf("没有这样的课程\n");
+	printf("娌℃湁杩欐牱鐨勮绋媆n");
 	return x;
 }
 
@@ -501,39 +501,39 @@ int main()
 	
 menu:
 	printf("\n");
-	printf("--------课表管理系统-------\n");	
-	printf("1.插入课程\n2.删除课程\n3.查询课程\n4.中序显示当前课程\n5.层序显示当前课程\n");
-	printf("其余键退出系统\n");	
+	printf("--------璇捐〃绠＄悊绯荤粺-------\n");	
+	printf("1.鎻掑叆璇剧▼\n2.鍒犻櫎璇剧▼\n3.鏌ヨ璇剧▼\n4.涓簭鏄剧ず褰撳墠璇剧▼\n5.灞傚簭鏄剧ず褰撳墠璇剧▼\n");
+	printf("鍏朵綑閿��鍑虹郴缁焅n");	
 	scanf("%d",&flag);
 	switch(flag)
 	{
 		case 1:
 			BiTree p;
 			p = new BiTNode;			
-			printf("课程名称\n"); 
+			printf("璇剧▼鍚嶇О\n"); 
 			getchar();
 			gets(p->classid);
-			printf("课程编号\n"); 
+			printf("璇剧▼缂栧彿\n"); 
 			scanf("%d",&p->id);
-			printf("课程区间\n");
+			printf("璇剧▼鍖洪棿\n");
 			scanf("%d %d",&p->low,&p->high); 
 			rb_insert(T,p); 
 			goto menu;
 		case 2:
 			int low,high;
 			BiTree x;
-			printf("要删除的区间:\n");
+			printf("瑕佸垹闄ょ殑鍖洪棿:\n");
 			scanf("%d %d",&low,&high);
 			x=interval_delete_search(T,low,high);
 			if(ifnil(x)) goto menu;
 			else
 			{
 				rb_delete(T,x);
-				printf("删除已成功\n"); 
+				printf("鍒犻櫎宸叉垚鍔焅n"); 
 			} 
 			goto menu;
 		case 3:
-			printf("输入区间:\n");
+			printf("杈撳叆鍖洪棿:\n");
 			scanf("%d %d",&low,&high);
 			interval_search(T,low,high);
 			goto menu;
